@@ -18,7 +18,7 @@ class Aluno(object):
         self.tCargaHoraria=0
         self.nota = 0
         self.ch = 0
-        self.operação = 0
+        self.operacao = 0
        
 
     def processar_dados(self,nota,ch):
@@ -26,9 +26,9 @@ class Aluno(object):
         self.ch = int(ch)
 
         self.tCargaHoraria += self.ch
-        self.operação += self.nota * self.ch
+        self.operacao += self.nota * self.ch
                 
-        self.cr = self.operação/self.tCargaHoraria
+        self.cr = self.operacao/self.tCargaHoraria
 
 
 def main():
