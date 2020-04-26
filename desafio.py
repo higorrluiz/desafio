@@ -29,9 +29,7 @@ class Curso(object):
         
         self.cr = soma_cr/len(self.lista_alunos)
 
-
 class Calculadora_CR(object):
-
     def ler_csv(self):
         arquivo = open("notas.csv","r")
         linhas = arquivo.readlines()
@@ -61,15 +59,13 @@ class Calculadora_CR(object):
     
             if linha[2] not in lista_de_cursos:
                 lista_de_cursos[linha[2]] = Curso()
-                curso = lista_de_cursos[linha[2]]
-                curso.lista_alunos[matricula] = Aluno()
+                lista_de_cursos[linha[2]].lista_alunos[matricula] = Aluno()
             
             if matricula not in lista_de_cursos[linha[2]].lista_alunos:
-                curso = lista_de_cursos[linha[2]]
-                curso.lista_alunos[matricula] = Aluno()
+                lista_de_cursos[linha[2]].lista_alunos[matricula] = Aluno()
 
-            curso.lista_alunos[matricula].processar_dados(linha[3],linha[4])
-            curso.cr_curso()
+            lista_de_cursos[linha[2]].lista_alunos[matricula].processar_dados(linha[3],linha[4])
+            lista_de_cursos[linha[2]].cr_curso()
 
     def mostrar_media_cr_cursos(self,lista_de_cursos):
         print("----- Média de CR dos cursos ------")
@@ -91,3 +87,4 @@ def main():
     calculadora_cr.mostrar_media_cr_cursos(lista_de_cursos)
 
 main()
+
