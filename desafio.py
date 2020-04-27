@@ -70,7 +70,6 @@ class Calculadora_CR(object):
     def mostrar_media_cr_cursos(self,lista_de_cursos):
         print("----- Média de CR dos cursos ------")
         for curso in lista_de_cursos:
-            
             print(f"Curso:{curso}  Média do CR:{lista_de_cursos[curso].cr}")
 
 def main():
